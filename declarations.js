@@ -1,11 +1,11 @@
-const escapeStr = '  \` \\ \/ \" \''
-const arr = [4, '2']
+const escapeStr = '  \` \\ \/ \" \'';
+const arr = [4, '2'];
 const obj = {
     str :"Chad GYI CHAN MYINT",
     num : 262,
     bool : true,
     undef : undefined,
-}
+};
 const nested = {
     arr : [4, undefined,'2'],
     obj : {
@@ -13,7 +13,7 @@ const nested = {
         num : 262,
         bool : true,
     }
-}
+};
 Object.freeze(obj, nested, arr);
 
 console.log(escapeStr, arr, obj, nested);
