@@ -12,7 +12,6 @@ const nested = {
         str :"Chad GYI CHAN MYINT AS ALWAYS",
         num : 262,
         bool : true,
-        undef : undefined,
     }
 }
 
