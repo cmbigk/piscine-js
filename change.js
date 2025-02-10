@@ -1,8 +1,9 @@
-function get (key) {
+const get = (key) => {
     return sourceObject[key];
-  }
+}
 
-function set (key, value) {
+const set = (key, value) => {
     sourceObject[key] = value;
-    return sourceObject;
-  }
+    return sourceObject[key];
+}
+
