@@ -14,6 +14,6 @@ const nested = {
         bool : true,
     }
 }
-
+Object.freeze(obj, nested, arr);
 
 console.log(escapeStr, arr, obj, nested);
