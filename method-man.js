@@ -12,7 +12,7 @@ function words (str) {
     }
 
     function whisper(str) {
-        return "*str.toLowerCase()*";
+        return "*"+str.toLowerCase()+"*";
     }
 
     function capitalize(str) {
