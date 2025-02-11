@@ -1,16 +1,11 @@
-function getAcceleration(f,m) {
-
-    if (m<=0 || f<=0) {
+function getAcceleration(obj) {
+    if (obj.hasOwnProperty("f") && obj.hasOwnProperty("m")) {
+        return obj.f / obj.m;
+    } else if (obj.hasOwnProperty("Δv") && obj.hasOwnProperty("Δt")) {
+        return obj.Δv / obj.Δt;
+    } else if (obj.hasOwnProperty("d") && obj.hasOwnProperty("t")) {
+        return (obj.d * 2) / (obj.t * obj.t);
+    } else {
         return "impossible";
     }
-
-    if (arguments.length<2) {
-        return "impossible";
-    }
-    return f/m;
-
 }
-
-
-console.log(getAcceleration(10, 5));
-console.log(getAcceleration());
