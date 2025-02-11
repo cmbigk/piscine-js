@@ -16,5 +16,5 @@ function words (str) {
     }
 
     function capitalize(str) {
-        return str.spilt(' ').toUpperCase([0]) + str.slice(1).toLowerCase().join(' ');
+        return str.spilt(' ').str.slice(0).toUpperCase() + str.slice(1).toLowerCase().join(' ');
     }
