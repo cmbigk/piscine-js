@@ -35,8 +35,9 @@ function arrToSet(arr) {
   }
   
   function arrToObj(arr) {
-    return Object.fromEntries(arr);
+    return Object.fromEntries(arr.map((v, i) => [i, v])); // Map values to [index, value] pairs
   }
+  
   
   function strToObj(str) {
     return arrToObj(strToArr(str));
