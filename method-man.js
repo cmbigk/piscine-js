@@ -14,13 +14,13 @@ function words (str) {
     function whisper(str) {
         return "*"+str.toLowerCase()+"*";
     }
-    function capitalize(str) {
-        return str.split(' ').
-        map (function(word){
-            return word.charAt(0).toUpperCase() + word.slice(1).toLowerCase();
-
-        }).join(' ');
+    
+    function capitalize(string) {
+        return string.charAt(0).toUpperCase() + string.slice(1).toLowerCase();
     }
     
+    console.log(capitalize('zap ZAP')); // Output: "Zap zap"
+    
 
-    console.log(capitalize('zapZAP'));
+    console.log(capitalize('zap ZAP'));
+    console.log(capitalize('hap HAP'));
