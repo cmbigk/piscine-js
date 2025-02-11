@@ -15,8 +15,12 @@ function words (str) {
         return "*"+str.toLowerCase()+"*";
     }
     function capitalize(str) {
-        return str.slice(0).toUpperCase() + str.slice(1).toLowerCase();
+        return str.split(' ').
+        map (function(word){
+            return word.charAt(0).toUpperCase() + word.slice(1).toLowerCase();
+
+        }).join(' ');
     }
     
 
-    console.log(capitalize('hello world'));
+    console.log(capitalize('zapZAP'));
