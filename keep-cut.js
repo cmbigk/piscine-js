@@ -19,7 +19,7 @@ function keepLast(str) {
 }
 
 function keepFirstLast(str) {
-    if (str.Length <=3 ){
+    if (str.length <=3 ){
         return str;
     }
     const firstStr = str.slice(0, 2);
@@ -28,4 +28,4 @@ function keepFirstLast(str) {
 }
 
 
-console.log(keepFirstLast('abcdef'));        
+console.log(keepFirstLast('af'));        
