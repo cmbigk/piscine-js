@@ -1,5 +1,6 @@
 function slice(array, start, end) {
     if (typeof array === 'string') {
+        var arr = array
         array = [...array]; 
     }
 
@@ -12,5 +13,8 @@ function slice(array, start, end) {
         sliced.push(array[i]);
     }
     
-    return typeof array === 'string' ? sliced.join('') : sliced;  
+    return typeof arr === 'string' ? sliced.join("") : sliced;  
 }
+
+const arr = 'abcdef'
+console.log(slice(arr,0,-2))

@@ -7,8 +7,6 @@ function indexOf(arr, item, index) {
     return -1;
 }
 
-const arr = [1, 2, 3, 4, 5 , 4];
-console.log(indexOf(arr, 4)); // 3
 
 function lastIndexOf(arr, item, index) {
     for (var i = index || arr.length - 1; i >= 0; i--) {
