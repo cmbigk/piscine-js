@@ -19,10 +19,10 @@ function keepLast(str) {
 }
 
 function keepFirstLast(str) {
-    const firstStr = str.slice(0, 3);
+    const firstStr = str.slice(0, 2);
     const lastStr = str.slice(str.length - 2);
     return firstStr + lastStr;
 }
 
 
-console.log(cutFirstLast('abcdef'));        
+console.log(keepFirstLast('abcdef'));        
