@@ -1,21 +1,21 @@
-function indexOf(collection, target,index){
-    for (let i = index; i < collection.length; i++){
-        if (collection[i] === target){
+function indexOf(arr, item, index) {
+    for (var i = index || 0; i < arr.length; i++) {
+        if (arr[i] === item) {
             return i;
         }
     }
     return -1;
 }
 
-function lastIndexOf(collection, target,index){
-    for (let i = collection.length - 1; i >= index; i--){
-        if (collection[i] === target){
+function lastIndexOf(arr, item, index) {
+    for (var i = index || arr.length - 1; i >= 0; i--) {
+        if (arr[i] === item) {
             return i;
         }
     }
     return -1;
-}   
+}
 
-function includes(collection, target,index){
-    return indexOf(collection, target,index)!== -1;     
+function includes(arr, item, index) {
+    return indexOf(arr, item, index) !== -1;
 }
