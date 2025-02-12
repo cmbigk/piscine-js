@@ -44,25 +44,3 @@ function modulo(a, b) {
 
     return isNegative ? -a : a; // Apply the sign
 }
-
-// Test Cases
-console.log(multiply(34, 78));           // 2652
-console.log(multiply(123, 0));           // 0
-console.log(multiply(0, -230));          // 0
-console.log(multiply(0, 0));             // 0
-console.log(multiply(123, -22));         // -2706
-console.log(multiply(-22, -123));        // 2706
-
-console.log(divide(34, 78));       
-console.log(divide(78, 34));
-console.log(divide(123, 22));
-console.log(divide(123, -22));
-console.log(divide(-123, 22));
-console.log(divide(-123, -22));
-
-console.log(modulo(34, 78));
-console.log(modulo(78, 34));
-console.log(modulo(123, 22));
-console.log(modulo(123, -22)); 
-console.log(modulo(-123, 22) );
-console.log(modulo(-123, -22) );

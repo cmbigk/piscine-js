@@ -1,9 +1,8 @@
 function indexOf(collection, target){
-    for (const key of collection){
-
-       if ( collection[key] === target ){
-        return i;
-       }
+    for (let i = 0; i < collection.length; i++){
+        if (collection[i] === target){
+            return i;
+        }
     }
     return -1;
 }
