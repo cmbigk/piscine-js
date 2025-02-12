@@ -19,6 +19,9 @@ function keepLast(str) {
 }
 
 function keepFirstLast(str) {
+    if (str.Length <=3 ){
+        return str;
+    }
     const firstStr = str.slice(0, 2);
     const lastStr = str.slice(str.length - 2);
     return firstStr + lastStr;
