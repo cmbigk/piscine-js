@@ -7,7 +7,7 @@ function cutLast(str) {
 }
 
 function cutFirstLast(str) {
-    return str.slice(2, str.length - 3);
+    return str.slice(2, str.length - 2);
 }
 
 function keepFirst(str) {
@@ -15,14 +15,14 @@ function keepFirst(str) {
 }
 
 function keepLast(str) {
-    return str.slice(str.length - 3);
+    return str.slice(str.length - 2);
 }
 
 function keepFirstLast(str) {
     const firstStr = str.slice(0, 3);
-    const lastStr = str.slice(str.length - 3);
+    const lastStr = str.slice(str.length - 2);
     return firstStr + lastStr;
 }
 
 
-console.log(cutLast('abcdef')); // abc         
+console.log(cutFirstLast('abcdef'));        
