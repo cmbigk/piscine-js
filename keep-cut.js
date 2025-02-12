@@ -3,7 +3,7 @@ function cutFirst(str) {
 }
 
 function cutLast(str) {
-    return str.slice(0, str.length - 3);
+    return str.slice(0, str.length - 2);
 }
 
 function cutFirstLast(str) {
@@ -25,3 +25,4 @@ function keepFirstLast(str) {
 }
 
 
+console.log(cutLast('abcdef')); // abc         
