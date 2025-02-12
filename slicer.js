@@ -15,6 +15,3 @@ function slice(array, start, end) {
     
     return typeof arr === 'string' ? sliced.join("") : sliced;  
 }
-
-const arr = 'abcdef'
-console.log(slice(arr,0,-2))
