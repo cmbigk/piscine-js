@@ -6,7 +6,7 @@ function trunc(num) {
     let power = 1;
     while (power * 10 <= num) {
         power *= 10;
-    }
+    } //power = 1000 stop(example)
     while (power >= 1) {
         while (result + power <= num) {
             result += power;
@@ -18,12 +18,23 @@ function trunc(num) {
 
 
 function floor(num) {
-    let t = trunc(num);
-    return num < 0 && num !== t ? t - 1 : t;
+    let t = trunc(num); 
+    if (num < 0 && num !== t) {
+        return t - 1; 
+    } else {
+        return t; 
+    }
 }
+
 function ceil(num) {
     let t = trunc(num);
-    return num > t ? t + 1 : t;
+
+    if (num>t) {
+        return t+1;
+    } else {
+        return t;
+    }
+
 }
 function round(num) {
     let t = trunc(num);
