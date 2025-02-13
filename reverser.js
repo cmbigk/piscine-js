@@ -4,7 +4,7 @@ function reverse(arrorstr){
         arrorstr = [...arrorstr]
     }
 
-    result = []
+    var result = []
     for (var i = arrorstr.length-1; i >= 0; i--){
         result.push(arrorstr[i]);
     }
@@ -13,5 +13,5 @@ function reverse(arrorstr){
 
 
 
-
-
+console.log(reverse("pouet"))
+console.log(reverse([1,2,3]))
