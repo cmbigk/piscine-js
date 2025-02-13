@@ -12,14 +12,6 @@ function words (str) {
     }
 
     function whisper(str) {
-<<<<<<< HEAD
-        return "*str.toLowerCase()*";
-    }
-
-    function capitalize(str) {
-        return str.spilt(' '). str[0].toUpperCase() + str.slice(1).toLowerCase().join(' ');
-    }
-=======
         return "*"+str.toLowerCase()+"*";
     }
     
@@ -32,4 +24,3 @@ function words (str) {
 
     console.log(capitalize('zap ZAP'));
     console.log(capitalize('hap HAP'));
->>>>>>> master
