@@ -1,6 +1,5 @@
 function trunc(num) {
     const isNegative = num < 0;
-
     num = Math.abs(num).toString();
 
     let result = "";
@@ -29,8 +28,7 @@ function round(num) {
         return (t - num) > 0.5 ? floor(num) : ceil(num);
     }
 }
-
-
+// Testing the functions
 console.log(floor(4.9));  // Output: 4
 console.log(floor(-4.9)); // Output: -5
 console.log(ceil(4.1));   // Output: 5
