@@ -29,7 +29,7 @@ function join(sampleInput, delimiter) {
         return sampleInput.join(' ');
     }
 
-    result = sampleInput[0].toString();
+   const result = sampleInput[0].toString();
     for (let i= 1; i < sampleInput.length; i++){
         result += delimiter+ sampleInput[i];
     }   
