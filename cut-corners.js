@@ -1,16 +1,17 @@
 function trunc(num) {
     const isNegative = num < 0;
-    num = Math.abs(num).toString();
+    num = Math.abs(num);
 
-    let result = "";
-    for (let i = 0; i < num.length; i++) {
-        if (num[i] === ".") {
-            break; 
-        }
-        result += num[i]; 
+    let result = 0;
+
+    // Subtract 1 repeatedly until result is less than num
+    while (result + 1 <= num) {
+        result++;
     }
-    return isNegative ? -Number(result) : Number(result);
+
+    return isNegative ? -result : result;
 }
+
 
 function floor(num) {
     let t = trunc(num);
@@ -39,3 +40,38 @@ console.log(round(-3.5)); // Output: -3
 console.log(round(-4.5)); // Output: -4
 console.log(trunc(4.9));  // Output: 4
 console.log(trunc(-4.9)); // Output: -4
+
+
+
+function runTests() {
+    const nums = [Math.PI, -Math.PI, Math.E, -Math.E, 0];
+
+    console.log("Testing trunc:");
+    nums.forEach(num => {
+        console.log(`trunc(${num}) = ${trunc(num)}`);
+    });
+
+    console.log("\nTesting floor:");
+    nums.forEach(num => {
+        console.log(`floor(${num}) = ${floor(num)}`);
+    });
+
+    console.log("\nTesting ceil:");
+    nums.forEach(num => {
+        console.log(`ceil(${num}) = ${ceil(num)}`);
+    });
+
+    console.log("\nTesting round:");
+    nums.forEach(num => {
+        console.log(`round(${num}) = ${round(num)}`);
+    });
+
+    console.log("\nAdditional Test for trunc:");
+    const ctx = Math.random() * 10; // Generate random test context
+    const largeNum = 0xfffffffff + ctx;
+    console.log(`trunc(${largeNum}) = ${trunc(largeNum)}`);
+    console.log(`Expected: ${Math.floor(largeNum)}`);
+}
+
+// Run the tests
+runTests();
