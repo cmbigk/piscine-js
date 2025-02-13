@@ -1,11 +1,19 @@
 function trunc(num) {
-    const isNegative = num < 0;
-    num = Math.abs(num); // Ensure num is positive for calculation
-
-    // Use Math.floor() to remove the decimal part
-    let result = Math.floor(num);
-
-    return isNegative ? -result : result;
+    if (num < 0) {
+        return -trunc(-num);
+    }
+    let result = 0;
+    let power = 1;
+    while (power * 10 <= num) {
+        power *= 10;
+    }
+    while (power >= 1) {
+        while (result + power <= num) {
+            result += power;
+        }
+        power /= 10;
+    }
+    return result;
 }
 
 
