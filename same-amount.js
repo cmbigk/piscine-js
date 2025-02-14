@@ -7,6 +7,7 @@ function sameAmount(str,reg1,reg2){
 
     return arr1 !== null && arr2 !== null && arr1.length === arr2.length;
 }
+/*
 const data = `qqqqqqq q qqqqqqqfsqqqqq q qq  qw w wq wqw  wqw
  ijnjjnfapsdbjnkfsdiqw klfsdjn fs fsdnjnkfsdjnk sfdjn fsp fd`
 
@@ -24,6 +25,8 @@ console.log(sameAmount(data, /^[qs]/, /^[gq]/)); // Depends on `data`
 console.log(sameAmount(data, /j/, /w/)); // Depends on `data`
 console.log(!sameAmount(data, /j/, / /)); // Depends on `data`
 console.log(sameAmount(data, /fs./, /jn./)); // Depends on `data`
+
+*/
 
 
 
