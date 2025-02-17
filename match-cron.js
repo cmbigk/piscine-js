@@ -23,3 +23,18 @@ console.log(matchCron('9 * * * *', new Date('2020-05-30 19:09:00'))); // true
 console.log(matchCron('9 * * * *', new Date('2020-05-30 19:21:00'))); // false
 console.log(matchCron('15 10 * * *', new Date('2024-02-17 10:15:00'))); // true
 console.log(matchCron('15 10 * * *', new Date('2024-02-17 10:16:00'))); // false
+
+
+console.log(matchCron('* * * * 1', new Date('2020-06-01 00:00:00')))
+console.log(matchCron('* * * 2 *', new Date('2021-02-01 00:00:00')))
+console.log(matchCron('* * 9 * *', new Date('2020-06-09 00:00:00')))
+console.log(matchCron('* 3 * * *', new Date('2020-05-31 03:00:00')))
+console.log(matchCron('1 * * * *', new Date('2020-05-30 19:01:00')))
+console.log(matchCron('3 3 * 3 3', new Date('2021-03-03 03:03:00')))
+
+
+console.log(matchCron('* * * * 1', new Date('2020-06-02 00:00:00')))
+console.log(!matchCron('* * * 2 *', new Date('2021-03-01 00:00:00')))
+console.log(!matchCron('* * 8 * *', new Date('2020-06-09 00:00:00')))
+console.log(!matchCron('* 2 * * *', new Date('2020-05-31 03:00:00')))
+console.log(!matchCron('1 * * * *', new Date('2020-05-30 19:00:00')))
