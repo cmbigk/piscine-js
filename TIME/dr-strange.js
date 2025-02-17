@@ -1,11 +1,11 @@
-const customWeekdays = [
-    "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday",
-    "secondMonday", "secondTuesday", "secondWednesday", "secondThursday",
-    "secondFriday", "secondSaturday", "secondSunday"
-  ];
-  
-  function addWeek(newDate) {
-    const defaultDate = new Date('0001-01-01');
+
+function addWeek(newDate) {
+  const defaultDate = new Date('0001-01-01');
+  const customWeekdays = [
+      "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday",
+      "secondMonday", "secondTuesday", "secondWednesday", "secondThursday",
+      "secondFriday", "secondSaturday", "secondSunday"
+    ];
     
 
     const datesDifference = Math.floor((newDate - defaultDate) / 86400000);
