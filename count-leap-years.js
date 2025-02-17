@@ -1,6 +1,18 @@
 function countLeapYears(date) {
     let year = date.getFullYear();
-    return Math.floor(year / 4) - Math.floor(year / 100) + Math.floor(year / 400);
+    
+    // Calculate leap years until the year
+    let leapYears = Math.floor(year / 4) - Math.floor(year / 100) + Math.floor(year / 400);
+    
+    // Check if the date is before February 29th of the current year
+    let isBeforeLeapDay = date.getMonth() < 1 || (date.getMonth() === 1 && date.getDate() < 29);
+    
+    // If the date is before February 29th, subtract 1 from the leap year count
+    if (isBeforeLeapDay) {
+        leapYears--;
+    }
+    
+    return leapYears;
 }
 
 // Test cases
