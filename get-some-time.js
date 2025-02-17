@@ -4,19 +4,24 @@ function firstDayWeek(week, year) {
     
     // Get the day of the week (0 = Sunday, 1 = Monday, ..., 6 = Saturday)
     let dayOfWeek = date.getDay();
-    
-    // If January 1st is not a Monday, move to the first Monday of the year
-    let firstMonday = dayOfWeek === 1 ? date : new Date(date.setDate(date.getDate() + ((8 - dayOfWeek) % 7)));
-    
-    // Calculate the first day of the specified week (week 1 is the first Monday)
+
+    // If January 1st is not a Monday, find the first Monday of the year
+    let firstMonday = new Date(date);
+    if (dayOfWeek !== 1) {
+        firstMonday.setDate(date.getDate() + (8 - dayOfWeek) % 7);
+    }
+
+    // Adjust the date for the first day of the requested week
     let firstDayOfWeek = new Date(firstMonday);
     firstDayOfWeek.setDate(firstMonday.getDate() + (week - 1) * 7);
-    
-    // Return the date formatted as dd-mm-yyyy
+
+    // Format the result as dd-mm-yyyy
     let day = String(firstDayOfWeek.getDate()).padStart(2, '0');
     let month = String(firstDayOfWeek.getMonth() + 1).padStart(2, '0'); // Months are 0-indexed
     let yearResult = firstDayOfWeek.getFullYear();
-    
+
     return `${day}-${month}-${yearResult}`;
 }
 
+console.log(firstDayWeek(2, '2017')); // Expected: 02-01-2017
+console.log(firstDayWeek(23, '0091')); // Expected: 04-06-0091
