@@ -12,11 +12,11 @@ function filter5Vowels(state) {
 }
 
 function filter1DistinctVowel(arr) {
-    return arr.filter(
-        (item) => new Set(item.toLowerCase().match(/[aeiou]/gi)).size === 1
-    );
+    return arr.filter((item) => {
+        let vowels = item.toLowerCase().match(/[aeiou]/gi);
+        return vowels && new Set(vowels).size === 1;
+    });
 }
-
 
 
 function multiFilter(arr) {
@@ -30,4 +30,4 @@ function multiFilter(arr) {
     return arr;
 }
 
-console.log(filter1DistinctVowel('New York', 'Texas', 'California', 'Florida', 'Arizona', 'Washington', 'Maine', 'Ohio', 'Utah', 'Oregon', 'Kansas', 'Nevada', 'Idaho', 'Colorado', 'Montana', 'Wyoming', 'North Dakota', 'South Dakota', 'Nebraska', 'Oklahoma', 'Minnesota', 'Iowa', 'Missouri', 'Arkansas', 'Louisiana', 'Wisconsin', 'Illinois', 'Michigan', 'Indiana', 'Kentucky', 'Tennessee', 'Mississippi', 'Alabama', 'Georgia', 'Florida', 'South Carolina', 'North Carolina', 'Virginia', 'West Virginia', 'Maryland', 'Delaware', 'Pennsylvania', 'New Jersey', 'Connecticut', 'Rhode Island', 'Massachusetts', 'Vermont', 'New Hampshire', 'Maine'));
+console.log(filter1DistinctVowel(['New York', 'Texas', 'California', 'Florida', 'Arizona', 'Washington', 'Maine', 'Ohio', 'Utah', 'Oregon', 'Kansas', 'Nevada', 'Idaho', 'Colorado', 'Montana', 'Wyoming', 'North Dakota', 'South Dakota', 'Nebraska', 'Oklahoma', 'Minnesota', 'Iowa', 'Missouri', 'Arkansas', 'Louisiana', 'Wisconsin', 'Illinois', 'Michigan', 'Indiana', 'Kentucky', 'Tennessee', 'Mississippi', 'Alabama', 'Georgia', 'Florida', 'South Carolina', 'North Carolina', 'Virginia', 'West Virginia', 'Maryland', 'Delaware', 'Pennsylvania', 'New Jersey', 'Connecticut', 'Rhode Island', 'Massachusetts', 'Vermont', 'New Hampshire', 'Maine']));
