@@ -34,7 +34,6 @@ function tempForecasts(states){
         let strin = all.temperature
         let res2 = all.state.match(regexSp)
         let str = strin.match(resRegex)
-        // let res3 = all.state.match(regexSp)
         let res = strin.replace(resRegex,'')
         if(res2!== null){
             all.state = all.state.replace(regexSp,res2[0].toUpperCase())
