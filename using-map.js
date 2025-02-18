@@ -27,18 +27,25 @@ function trimTemp(arr) {
 
 function tempForecasts(arr) {
     return arr.map((item) => {
-        return `${
-            Math.floor((Number(item.temperature.slice(0, -2)) - 32) * (5 / 9))
-        }°Celsius in ${item.city}, ${
-            item.state
-                .split(" ")
-                .map((word) => word[0].toUpperCase() + word.slice(1))
-                .join(" ")
-        }`;
+        let temp = item.temperature.trim(); // Remove extra spaces
+        if (!temp.endsWith("°F")) return "Invalid temperature"; // Handle incorrect format
+
+        let fahrenheit = Number(temp.slice(0, -2)); // Extract numeric value
+        if (isNaN(fahrenheit)) return "Invalid temperature"; // Handle NaN cases
+
+        let celsius = Math.floor((fahrenheit - 32) * (5 / 9));
+
+        let capitalizedState = item.state
+            .split(" ")
+            .map((word) => word[0].toUpperCase() + word.slice(1))
+            .join(" ");
+
+        return `${celsius}°Celsius in ${item.city}, ${capitalizedState}`;
     });
 }
 
-// Corrected Data for Functions
+
+
 const locations = [
     { city: "New York", country: "USA" },
     { city: "Tokyo", country: "Japan" },
