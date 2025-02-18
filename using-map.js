@@ -25,23 +25,27 @@ function trimTemp(arr) {
     }));
 }
 
-function tempForecasts(arr) {
-    return arr.map((item) => {
-        let temp = item.temperature.trim(); // Remove extra spaces
-        if (!temp.endsWith("°F")) return "Invalid temperature"; // Handle incorrect format
-
-        let fahrenheit = Number(temp.slice(0, -2)); // Extract numeric value
-        if (isNaN(fahrenheit)) return "Invalid temperature"; // Handle NaN cases
-
-        let celsius = Math.floor((fahrenheit - 32) * (5 / 9));
-
-        let capitalizedState = item.state
-            .split(" ")
-            .map((word) => word[0].toUpperCase() + word.slice(1))
-            .join(" ");
-
-        return `${celsius}°Celsius in ${item.city}, ${capitalizedState}`;
-    });
+function tempForecasts(states){
+    let array = states.map(all =>{
+        const regex = /\s/g
+        const resRegex = new RegExp(regex)
+        const regexSpace = /\s\w/g
+        const regexSp = new RegExp(regexSpace)
+        let strin = all.temperature
+        let res2 = all.state.match(regexSp)
+        let str = strin.match(resRegex)
+        // let res3 = all.state.match(regexSp)
+        let res = strin.replace(resRegex,'')
+        if(res2!== null){
+            all.state = all.state.replace(regexSp,res2[0].toUpperCase())
+        }
+        res = parseInt(res)
+        let cel = (res -32)*5/9
+        cel = Math.floor(cel)
+        let strRes = cel+'°Celsius in '+all.city+', ' + all.state[0].toUpperCase()+all.state.slice(1)
+        return strRes
+    })  
+    return array
 }
 
 
